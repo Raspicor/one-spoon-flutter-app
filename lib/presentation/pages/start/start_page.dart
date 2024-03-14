@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class StartPage extends ConsumerStatefulWidget {
+class StartPage extends StatefulWidget {
   const StartPage({super.key});
 
   @override
-  ConsumerState<StartPage> createState() => _StartPageState();
+  State<StartPage> createState() => _StartPageState();
 }
 
-class _StartPageState extends ConsumerState<StartPage> {
+class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

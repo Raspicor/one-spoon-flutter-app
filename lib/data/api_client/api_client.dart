@@ -17,7 +17,7 @@ abstract class HTTPTask<T> {
 class APIClient {
   Map<String, String> header = {'Content-Type': 'application/json'};
 
-  String get baseUri => "http://localhost:3000";
+  String get baseUri => "localhost:3000";
 
   Future<dynamic> send(HTTPTask task) async {
     final url = _buildUrl(task);
