@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-class StartViewModel extends ChangeNotifier {}
+class StartViewModel with ChangeNotifier {}

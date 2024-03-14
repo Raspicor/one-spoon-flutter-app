@@ -10,8 +10,10 @@ class GetTestUseCase extends ITestUseCase {
   });
 
   @override
-  Future<void> invoke(String sender) {
+  Future<List<dynamic>> invoke(String sender) async {
     TestInfo test = TestInfo(testId: sender);
-    return testRepo.getTest(test).then((value) => value);
+    List<dynamic> resultList =
+        await testRepo.getTest(test).then((value) => value);
+    return resultList;
   }
 }

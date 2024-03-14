@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:one_spoon/domain/usecases.dart';
 
-class SearchViewModel extends ChangeNotifier {
+class SearchViewModel with ChangeNotifier {
   final GetTestUseCase getTestUseCase;
 
   SearchViewModel({
     required this.getTestUseCase,
   });
 
-  final String userId = 'user';
+  final String keyword = 'user';
+  late List<dynamic> testData = [];
 
-  void getTest() {
-    getTestUseCase.invoke(userId).then((value) => value);
+  Future<void> getTest() async {
+    testData = await getTestUseCase.invoke(keyword).then((value) => value);
+    notifyListeners();
   }
 }

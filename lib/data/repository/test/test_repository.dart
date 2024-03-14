@@ -8,7 +8,9 @@ class TestRepository implements ITestRepository {
   final _testAPIClient = TestAPIClient();
 
   @override
-  Future<void> getTest(TestInfo sender) async {
-    await _testAPIClient.getTest(sender);
+  Future<List<dynamic>> getTest(TestInfo sender) async {
+    return await _testAPIClient
+        .getTest(sender)
+        .then((value) => value['data']['recruitNames']);
   }
 }
